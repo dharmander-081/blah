@@ -1,0 +1,30 @@
+# Environment variables & secrets
+.env
+*.env
+.env.local
+
+# Dependencies
+node_modules/
+edupulse/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Build artifacts
+dist/
+build/
+edupulse/dist/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

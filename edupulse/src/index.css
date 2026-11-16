@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+:root {
+  --font-sans: 'Inter', 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+
+  /* Console (dark) — default */
+  --bg: #09090B;
+  --surface: #0F0F12;
+  --surface-2: #141418;
+  --border: #1F1F25;
+  --border-strong: #2A2A32;
+  --text: #ECECEF;
+  --text-muted: #8B8B96;
+  --text-faint: #5C5C66;
+
+  --accent: #F5A524;
+  --accent-muted: rgba(245, 165, 36, 0.12);
+
+  --status-critical: #E5484D;
+  --status-moderate: #F5A524;
+  --status-safe: #30A46C;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+[data-theme='student'] {
+  --bg: #F6F4EF;
+  --surface: #FBFAF7;
+  --surface-2: #EFEDE6;
+  --border: #E4E0D6;
+  --border-strong: #D4D0C6;
+  --text: #1A1A17;
+  --text-muted: #6B675C;
+  --text-faint: #9A9688;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-muted);
+  color: var(--text);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Student app base size override */
+[data-theme='student'] {
+  font-size: 15px;
+}
